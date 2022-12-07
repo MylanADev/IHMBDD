@@ -59,13 +59,28 @@ namespace SQLIHM
             this.columnHeaderSexe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStripListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.outilsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonActualiser = new System.Windows.Forms.Button();
             this.supprimerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonActualiser = new System.Windows.Forms.Button();
+            this.groupBoxRecherche = new System.Windows.Forms.GroupBox();
+            this.buttonSearchNom = new System.Windows.Forms.Button();
+            this.textBoxNomSearch = new System.Windows.Forms.TextBox();
+            this.labelNomSearch = new System.Windows.Forms.Label();
+            this.buttonSearchNomAge = new System.Windows.Forms.Button();
+            this.textBoxSearchNom2 = new System.Windows.Forms.TextBox();
+            this.labelNomAgeSearch = new System.Windows.Forms.Label();
+            this.buttonSearchID = new System.Windows.Forms.Button();
+            this.textBoxIDSearch = new System.Windows.Forms.TextBox();
+            this.labelIDSearch = new System.Windows.Forms.Label();
+            this.buttonSearchAge = new System.Windows.Forms.Button();
+            this.textBoxAgeSearch = new System.Windows.Forms.TextBox();
+            this.labelAgeSearch = new System.Windows.Forms.Label();
+            this.textBoxSearchAge2 = new System.Windows.Forms.TextBox();
             this.groupBoxConnectBDD.SuspendLayout();
             this.groupBoxAddMember.SuspendLayout();
             this.groupBoxMemberList.SuspendLayout();
             this.contextMenuStripListView.SuspendLayout();
+            this.groupBoxRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConnectBTN
@@ -154,9 +169,9 @@ namespace SQLIHM
             this.groupBoxConnectBDD.Controls.Add(this.labelDB);
             this.groupBoxConnectBDD.Controls.Add(this.txtBoxDB);
             this.groupBoxConnectBDD.Controls.Add(this.txtBoxUID);
-            this.groupBoxConnectBDD.Location = new System.Drawing.Point(808, 12);
+            this.groupBoxConnectBDD.Location = new System.Drawing.Point(576, 13);
             this.groupBoxConnectBDD.Name = "groupBoxConnectBDD";
-            this.groupBoxConnectBDD.Size = new System.Drawing.Size(206, 178);
+            this.groupBoxConnectBDD.Size = new System.Drawing.Size(200, 178);
             this.groupBoxConnectBDD.TabIndex = 6;
             this.groupBoxConnectBDD.TabStop = false;
             this.groupBoxConnectBDD.Text = "Connexion BDD";
@@ -258,7 +273,7 @@ namespace SQLIHM
             this.groupBoxMemberList.Controls.Add(this.listViewMembre);
             this.groupBoxMemberList.Location = new System.Drawing.Point(13, 217);
             this.groupBoxMemberList.Name = "groupBoxMemberList";
-            this.groupBoxMemberList.Size = new System.Drawing.Size(1001, 239);
+            this.groupBoxMemberList.Size = new System.Drawing.Size(763, 239);
             this.groupBoxMemberList.TabIndex = 8;
             this.groupBoxMemberList.TabStop = false;
             this.groupBoxMemberList.Text = "Liste des membres";
@@ -277,7 +292,7 @@ namespace SQLIHM
             this.listViewMembre.Location = new System.Drawing.Point(7, 19);
             this.listViewMembre.MultiSelect = false;
             this.listViewMembre.Name = "listViewMembre";
-            this.listViewMembre.Size = new System.Drawing.Size(988, 214);
+            this.listViewMembre.Size = new System.Drawing.Size(750, 214);
             this.listViewMembre.TabIndex = 0;
             this.listViewMembre.UseCompatibleStateImageBehavior = false;
             this.listViewMembre.View = System.Windows.Forms.View.Details;
@@ -310,7 +325,7 @@ namespace SQLIHM
             this.contextMenuStripListView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outilsToolStripMenuItem});
             this.contextMenuStripListView.Name = "contextMenuStrip1";
-            this.contextMenuStripListView.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStripListView.Size = new System.Drawing.Size(106, 26);
             // 
             // outilsToolStripMenuItem
             // 
@@ -318,39 +333,173 @@ namespace SQLIHM
             this.supprimerToolStripMenuItem1,
             this.editerToolStripMenuItem});
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.outilsToolStripMenuItem.Text = "Outils";
-            // 
-            // buttonActualiser
-            // 
-            this.buttonActualiser.Location = new System.Drawing.Point(923, 196);
-            this.buttonActualiser.Name = "buttonActualiser";
-            this.buttonActualiser.Size = new System.Drawing.Size(91, 23);
-            this.buttonActualiser.TabIndex = 9;
-            this.buttonActualiser.Text = "Actualiser";
-            this.buttonActualiser.UseVisualStyleBackColor = true;
-            this.buttonActualiser.Click += new System.EventHandler(this.buttonActualiser_Click);
             // 
             // supprimerToolStripMenuItem1
             // 
             this.supprimerToolStripMenuItem1.Name = "supprimerToolStripMenuItem1";
-            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.supprimerToolStripMenuItem1.Text = "Supprimer";
             this.supprimerToolStripMenuItem1.Click += new System.EventHandler(this.supprimerToolStripMenuItem1_Click);
             // 
             // editerToolStripMenuItem
             // 
             this.editerToolStripMenuItem.Name = "editerToolStripMenuItem";
-            this.editerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editerToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.editerToolStripMenuItem.Text = "Editer";
             this.editerToolStripMenuItem.Click += new System.EventHandler(this.editerToolStripMenuItem_Click);
+            // 
+            // buttonActualiser
+            // 
+            this.buttonActualiser.Location = new System.Drawing.Point(691, 197);
+            this.buttonActualiser.Name = "buttonActualiser";
+            this.buttonActualiser.Size = new System.Drawing.Size(85, 23);
+            this.buttonActualiser.TabIndex = 9;
+            this.buttonActualiser.Text = "Actualiser";
+            this.buttonActualiser.UseVisualStyleBackColor = true;
+            this.buttonActualiser.Click += new System.EventHandler(this.buttonActualiser_Click);
+            // 
+            // groupBoxRecherche
+            // 
+            this.groupBoxRecherche.Controls.Add(this.textBoxSearchAge2);
+            this.groupBoxRecherche.Controls.Add(this.buttonSearchAge);
+            this.groupBoxRecherche.Controls.Add(this.buttonSearchNomAge);
+            this.groupBoxRecherche.Controls.Add(this.textBoxAgeSearch);
+            this.groupBoxRecherche.Controls.Add(this.labelAgeSearch);
+            this.groupBoxRecherche.Controls.Add(this.textBoxSearchNom2);
+            this.groupBoxRecherche.Controls.Add(this.labelNomAgeSearch);
+            this.groupBoxRecherche.Controls.Add(this.buttonSearchID);
+            this.groupBoxRecherche.Controls.Add(this.buttonSearchNom);
+            this.groupBoxRecherche.Controls.Add(this.textBoxIDSearch);
+            this.groupBoxRecherche.Controls.Add(this.labelIDSearch);
+            this.groupBoxRecherche.Controls.Add(this.textBoxNomSearch);
+            this.groupBoxRecherche.Controls.Add(this.labelNomSearch);
+            this.groupBoxRecherche.Location = new System.Drawing.Point(214, 13);
+            this.groupBoxRecherche.Name = "groupBoxRecherche";
+            this.groupBoxRecherche.Size = new System.Drawing.Size(356, 177);
+            this.groupBoxRecherche.TabIndex = 10;
+            this.groupBoxRecherche.TabStop = false;
+            this.groupBoxRecherche.Text = "Recherche Avancée";
+            // 
+            // buttonSearchNom
+            // 
+            this.buttonSearchNom.Location = new System.Drawing.Point(248, 50);
+            this.buttonSearchNom.Name = "buttonSearchNom";
+            this.buttonSearchNom.Size = new System.Drawing.Size(94, 23);
+            this.buttonSearchNom.TabIndex = 8;
+            this.buttonSearchNom.Text = "Rechercher";
+            this.buttonSearchNom.UseVisualStyleBackColor = true;
+            this.buttonSearchNom.Click += new System.EventHandler(this.buttonSearchNom_Click);
+            // 
+            // textBoxNomSearch
+            // 
+            this.textBoxNomSearch.Location = new System.Drawing.Point(38, 48);
+            this.textBoxNomSearch.Name = "textBoxNomSearch";
+            this.textBoxNomSearch.Size = new System.Drawing.Size(186, 20);
+            this.textBoxNomSearch.TabIndex = 7;
+            // 
+            // labelNomSearch
+            // 
+            this.labelNomSearch.AutoSize = true;
+            this.labelNomSearch.Location = new System.Drawing.Point(3, 55);
+            this.labelNomSearch.Name = "labelNomSearch";
+            this.labelNomSearch.Size = new System.Drawing.Size(35, 13);
+            this.labelNomSearch.TabIndex = 6;
+            this.labelNomSearch.Text = "Nom :";
+            // 
+            // buttonSearchNomAge
+            // 
+            this.buttonSearchNomAge.Location = new System.Drawing.Point(248, 143);
+            this.buttonSearchNomAge.Name = "buttonSearchNomAge";
+            this.buttonSearchNomAge.Size = new System.Drawing.Size(94, 23);
+            this.buttonSearchNomAge.TabIndex = 5;
+            this.buttonSearchNomAge.Text = "Rechercher";
+            this.buttonSearchNomAge.UseVisualStyleBackColor = true;
+            this.buttonSearchNomAge.Click += new System.EventHandler(this.buttonSearchNomAge_Click);
+            // 
+            // textBoxSearchNom2
+            // 
+            this.textBoxSearchNom2.Location = new System.Drawing.Point(82, 139);
+            this.textBoxSearchNom2.Name = "textBoxSearchNom2";
+            this.textBoxSearchNom2.Size = new System.Drawing.Size(99, 20);
+            this.textBoxSearchNom2.TabIndex = 4;
+            // 
+            // labelNomAgeSearch
+            // 
+            this.labelNomAgeSearch.AutoSize = true;
+            this.labelNomAgeSearch.Location = new System.Drawing.Point(7, 143);
+            this.labelNomAgeSearch.Name = "labelNomAgeSearch";
+            this.labelNomAgeSearch.Size = new System.Drawing.Size(69, 13);
+            this.labelNomAgeSearch.TabIndex = 3;
+            this.labelNomAgeSearch.Text = "Nom et Âge :";
+            // 
+            // buttonSearchID
+            // 
+            this.buttonSearchID.Location = new System.Drawing.Point(248, 21);
+            this.buttonSearchID.Name = "buttonSearchID";
+            this.buttonSearchID.Size = new System.Drawing.Size(94, 23);
+            this.buttonSearchID.TabIndex = 2;
+            this.buttonSearchID.Text = "Rechercher";
+            this.buttonSearchID.UseVisualStyleBackColor = true;
+            this.buttonSearchID.Click += new System.EventHandler(this.buttonSearchID_Click);
+            // 
+            // textBoxIDSearch
+            // 
+            this.textBoxIDSearch.Location = new System.Drawing.Point(38, 24);
+            this.textBoxIDSearch.Name = "textBoxIDSearch";
+            this.textBoxIDSearch.Size = new System.Drawing.Size(186, 20);
+            this.textBoxIDSearch.TabIndex = 1;
+            // 
+            // labelIDSearch
+            // 
+            this.labelIDSearch.AutoSize = true;
+            this.labelIDSearch.Location = new System.Drawing.Point(7, 27);
+            this.labelIDSearch.Name = "labelIDSearch";
+            this.labelIDSearch.Size = new System.Drawing.Size(24, 13);
+            this.labelIDSearch.TabIndex = 0;
+            this.labelIDSearch.Text = "ID :";
+            // 
+            // buttonSearchAge
+            // 
+            this.buttonSearchAge.Location = new System.Drawing.Point(248, 79);
+            this.buttonSearchAge.Name = "buttonSearchAge";
+            this.buttonSearchAge.Size = new System.Drawing.Size(94, 23);
+            this.buttonSearchAge.TabIndex = 11;
+            this.buttonSearchAge.Text = "Rechercher";
+            this.buttonSearchAge.UseVisualStyleBackColor = true;
+            this.buttonSearchAge.Click += new System.EventHandler(this.buttonSearchAge_Click);
+            // 
+            // textBoxAgeSearch
+            // 
+            this.textBoxAgeSearch.Location = new System.Drawing.Point(38, 77);
+            this.textBoxAgeSearch.Name = "textBoxAgeSearch";
+            this.textBoxAgeSearch.Size = new System.Drawing.Size(186, 20);
+            this.textBoxAgeSearch.TabIndex = 10;
+            // 
+            // labelAgeSearch
+            // 
+            this.labelAgeSearch.AutoSize = true;
+            this.labelAgeSearch.Location = new System.Drawing.Point(6, 84);
+            this.labelAgeSearch.Name = "labelAgeSearch";
+            this.labelAgeSearch.Size = new System.Drawing.Size(32, 13);
+            this.labelAgeSearch.TabIndex = 9;
+            this.labelAgeSearch.Text = "Âge :";
+            // 
+            // textBoxSearchAge2
+            // 
+            this.textBoxSearchAge2.Location = new System.Drawing.Point(187, 140);
+            this.textBoxSearchAge2.Name = "textBoxSearchAge2";
+            this.textBoxSearchAge2.Size = new System.Drawing.Size(55, 20);
+            this.textBoxSearchAge2.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1026, 468);
+            this.ClientSize = new System.Drawing.Size(795, 468);
+            this.Controls.Add(this.groupBoxRecherche);
             this.Controls.Add(this.buttonActualiser);
             this.Controls.Add(this.groupBoxMemberList);
             this.Controls.Add(this.groupBoxAddMember);
@@ -366,6 +515,8 @@ namespace SQLIHM
             this.groupBoxAddMember.PerformLayout();
             this.groupBoxMemberList.ResumeLayout(false);
             this.contextMenuStripListView.ResumeLayout(false);
+            this.groupBoxRecherche.ResumeLayout(false);
+            this.groupBoxRecherche.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,6 +555,20 @@ namespace SQLIHM
         private System.Windows.Forms.ToolStripMenuItem outilsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editerToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBoxRecherche;
+        private System.Windows.Forms.Button buttonSearchNom;
+        private System.Windows.Forms.TextBox textBoxNomSearch;
+        private System.Windows.Forms.Label labelNomSearch;
+        private System.Windows.Forms.Button buttonSearchNomAge;
+        private System.Windows.Forms.TextBox textBoxSearchNom2;
+        private System.Windows.Forms.Label labelNomAgeSearch;
+        private System.Windows.Forms.Button buttonSearchID;
+        private System.Windows.Forms.TextBox textBoxIDSearch;
+        private System.Windows.Forms.Label labelIDSearch;
+        private System.Windows.Forms.Button buttonSearchAge;
+        private System.Windows.Forms.TextBox textBoxAgeSearch;
+        private System.Windows.Forms.Label labelAgeSearch;
+        private System.Windows.Forms.TextBox textBoxSearchAge2;
     }
 }
 

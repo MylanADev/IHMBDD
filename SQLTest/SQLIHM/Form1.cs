@@ -191,5 +191,86 @@ namespace SQLIHM
                 }
             }
         }
+
+        private void buttonSearchID_Click(object sender, EventArgs e)
+        {
+            listViewMembre.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM membres WHERE id=@id", conn);
+            cmd.Parameters.AddWithValue("@id", textBoxIDSearch.Text);
+            using (MySqlDataReader Lire = cmd.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+                    string ID = Lire["id"].ToString();
+                    string nom = Lire["nom"].ToString();
+                    string prenom = Lire["prenom"].ToString();
+                    string age = Lire["age"].ToString();
+                    string sexe = Lire["sexe"].ToString();
+
+                    listViewMembre.Items.Add(new ListViewItem(new[] { ID, nom, prenom, age, sexe }));
+                }
+            }
+        }
+
+        private void buttonSearchNom_Click(object sender, EventArgs e)
+        {
+            listViewMembre.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM membres WHERE nom=@nom", conn);
+            cmd.Parameters.AddWithValue("@nom", textBoxNomSearch.Text);
+            using (MySqlDataReader Lire = cmd.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+                    string ID = Lire["id"].ToString();
+                    string nom = Lire["nom"].ToString();
+                    string prenom = Lire["prenom"].ToString();
+                    string age = Lire["age"].ToString();
+                    string sexe = Lire["sexe"].ToString();
+
+                    listViewMembre.Items.Add(new ListViewItem(new[] { ID, nom, prenom, age, sexe }));
+                }
+            }
+        }
+
+        private void buttonSearchAge_Click(object sender, EventArgs e)
+        {
+            listViewMembre.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM membres WHERE age=@age", conn);
+            cmd.Parameters.AddWithValue("@age", textBoxAgeSearch.Text);
+            using (MySqlDataReader Lire = cmd.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+                    string ID = Lire["id"].ToString();
+                    string nom = Lire["nom"].ToString();
+                    string prenom = Lire["prenom"].ToString();
+                    string age = Lire["age"].ToString();
+                    string sexe = Lire["sexe"].ToString();
+
+                    listViewMembre.Items.Add(new ListViewItem(new[] { ID, nom, prenom, age, sexe }));
+                }
+            }
+        }
+
+        private void buttonSearchNomAge_Click(object sender, EventArgs e)
+        {
+            listViewMembre.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM membres WHERE age=@age AND nom=@nom", conn);
+            cmd.Parameters.AddWithValue("@age", textBoxSearchAge2.Text);
+            cmd.Parameters.AddWithValue("@nom", textBoxSearchNom2.Text);
+            using (MySqlDataReader Lire = cmd.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+                    string ID = Lire["id"].ToString();
+                    string nom = Lire["nom"].ToString();
+                    string prenom = Lire["prenom"].ToString();
+                    string age = Lire["age"].ToString();
+                    string sexe = Lire["sexe"].ToString();
+
+                    listViewMembre.Items.Add(new ListViewItem(new[] { ID, nom, prenom, age, sexe }));
+                }
+            }
+        }
     }
 }
